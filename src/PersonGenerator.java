@@ -13,26 +13,28 @@ import java.util.Scanner;
 
 public class PersonGenerator
 {
-    String iD = "";
-    String fristName = "";
+    String ID = "";
+    String firstName = "";
     String lastName = "";
     String title = "";
-    int yearOfBirth;
+    int yearOfBirth = 0;
+
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
 
         ArrayList<String>recs = new ArrayList<>();
 
+
         boolean done = false;
         do
         {
-            String iD = SafeInput.getNonZeroLenString(in, "Enter the person's ID");
+            String ID = SafeInput.getNonZeroLenString(in, "Enter the person's ID");
             String firstName = SafeInput.getNonZeroLenString(in, "Enter the person's first name");
             String lastName = SafeInput.getNonZeroLenString(in, "Enter the person's last name");
             String title = SafeInput.getNonZeroLenString(in, "Enter the person's title");
-            int yearOfBirth = SafeInput.getRangedInt(in, "Enter the person's birth year", 1000, 2023);
-            recs.add(iD + "," + firstName + "," + lastName + "," + title + "," + yearOfBirth);
+            int yearOfBirth = SafeInput.getRangedInt(in, "Enter the person's birth year", 1000, 2020);
+            recs.add(ID + "," + firstName + "," + lastName + "," + title + "," + yearOfBirth);
             done = SafeInput.getYNConfirm(in, "Do you want to keep entering information? ");
         }
         while (done);

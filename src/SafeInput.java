@@ -56,6 +56,11 @@ public class SafeInput
             {
                 retInt = pipe.nextInt();
             }
+            if (pipe.hasNextLine())
+            {
+                pipe.nextLine();
+                return retInt;
+            }
             if (retInt >= low && retInt <= high)
             {
                 return retInt;
@@ -72,6 +77,11 @@ public class SafeInput
             {
                 retDouble = pipe.nextDouble();
             }
+            if (pipe.hasNextLine())
+            {
+                pipe.nextLine();
+                return retDouble;
+            }
             if (retDouble >= low && retDouble <= high)
             {
                 return retDouble;
@@ -82,8 +92,10 @@ public class SafeInput
     {
         String retString = "";
         do {
+
             System.out.print("\n" + prompt + " [Y/N]: ");
             retString = pipe.nextLine();
+
 
         }while(!(retString.equalsIgnoreCase("yes") || retString.equalsIgnoreCase("y")
                 || retString.equalsIgnoreCase("no") || retString.equalsIgnoreCase("n")));
