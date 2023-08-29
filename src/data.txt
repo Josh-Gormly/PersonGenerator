@@ -1,0 +1,7 @@
+ String iD = SafeInput.getNonZeroLenString(in, "Enter the person's ID");
+            String firstName = SafeInput.getNonZeroLenString(in, "Enter the person's first name");
+            String lastName = SafeInput.getNonZeroLenString(in, "Enter the person's last name");
+            String title = SafeInput.getNonZeroLenString(in, "Enter the person's title");
+            Integer yearOfBirth = SafeInput.getRangedInt(in, "Enter the person's birth year", 1000, 2023);
+            recs.add(iD + "," + firstName + "," + lastName + "," + title + "," + yearOfBirth);
+            done = SafeInput.getYNConfirm(in, "Do you want to keep entering information? ");
